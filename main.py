@@ -14,12 +14,16 @@ def main():
 
     length = 0
     azimuth = 0
+    angle = 0
     for i in range(len(points)-1):
         azimuth += points[i].get_azimuth(points[i+1])
         length += points[i].get_length(points[i+1])
+    for i in range(len(points)-2):
+        angle += points[i+1].get_angle(points[i], points[i+2])
 
     print(f'length = {length}')
     print(f'azimuth = {azimuth}')
+    print(f'angle = {angle}')
 
 
 if __name__ == '__main__':
